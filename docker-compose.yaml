@@ -10,7 +10,7 @@ services:
       - db
     build: ./
     ports:
-      - '8080:8075'
+      - '8080:8000'
 
   db:
     restart: always
