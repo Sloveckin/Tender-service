@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+
+  app:
+    restart: always
+    container_name: service
+    command: ./app
+    depends_on:
+      - db
+    build: ./
+    ports:
+      - '8080:8075'
+
+  db:
+    restart: always
+    image: postgres:latest
+    container_name: database
+    environment:
+      POSTGRES_PASSWORD: 2711
+    ports:
+      - 5436:5432
